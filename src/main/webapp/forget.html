@@ -6,16 +6,6 @@
   </head>
   <body>
     <h1>Forgot Password</h1>
-    {% with messages = get_flashed_messages(with_categories=true) %}
-      {% if messages %}
-        <ul>
-          {% for category, msg in messages %}
-            <li><strong>{{ category }}:</strong> {{ msg }}</li>
-          {% endfor %}
-        </ul>
-      {% endif %}
-    {% endwith %}
-
     <form method="post" action="{{ url_for('forgot') }}">
       <label>Email: <input type="email" name="email" required></label><br><br>
       <button type="submit">Send reset link</button>
@@ -24,3 +14,4 @@
     <p>Demo email you can try: <code>alice@example.com</code> (if you created the demo user)</p>
   </body>
 </html>
+
